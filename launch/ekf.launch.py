@@ -32,10 +32,20 @@ def generate_launch_description():
             output='screen',
             parameters=[os.path.join(get_package_share_directory("robot_localization"), 'params', 'imu_raw_ekf.yaml')],
             remappings=[('odometry/filtered', 'imu_raw_odom')]
-           ),
+        ),
         launch_ros.actions.Node(
             package='plotter',
             executable='plotter_node',
             name='plotter_node',
-           ),
+        ),
+        launch_ros.actions.Node(
+            package='plotter',
+            executable='yaw_plotter_node',
+            name='yaw_plotter_node',
+        ),
+        launch_ros.actions.Node(
+            package='plotter',
+            executable='imu_corrector_node',
+            name='imu_corrector_node',
+        ),
 ])
