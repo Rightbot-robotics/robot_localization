@@ -38,11 +38,11 @@ def generate_launch_description():
             executable='plotter_node',
             name='plotter_node',
         ),
-        # launch_ros.actions.Node(
-        #     package='plotter',
-        #     executable='yaw_plotter_node',
-        #     name='yaw_plotter_node',
-        # ),
+        launch_ros.actions.Node(
+            package='plotter',
+            executable='yaw_plotter_node',
+            name='yaw_plotter_node',
+        ),
         launch_ros.actions.Node(
             package='plotter',
             executable='imu_corrector_node',
