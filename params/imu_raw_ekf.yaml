@@ -84,7 +84,7 @@ ekf_filter_node:
         
         dynamic_process_noise_covariance: true
                                     #  x     y     z     r     p      y     vx     vy     vz    vr    vp    vy     ax    ay    az
-        initial_estimate_covariance: [1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 145.0, 1e-11, 1e-13, 1e-9, 1e-9, 1e-9, 145.0, 1e-9, 1e-9, 1e-9]
+        initial_estimate_covariance: [1e-9, 1e-9, 1e-9, 1e-9, 1e-9, 145.0, 1e-11, 1e-11, 1e-9, 1e-9, 1e-9, 145.0, 1e-9, 1e-9, 1e-9]
 
         # initial_estimate_covariance: [1e-9, 0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,     0.0,    0.0,    0.0,
         #                                 0.0,    1e-9, 0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,     0.0,    0.0,    0.0,
