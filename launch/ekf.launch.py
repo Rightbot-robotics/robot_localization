@@ -33,6 +33,11 @@ def generate_launch_description():
             parameters=[os.path.join(get_package_share_directory("robot_localization"), 'params', 'imu_raw_ekf.yaml')],
             remappings=[('odometry/filtered', 'imu_raw_odom')]
         ),
+        
+        launch_ros.actions.Node(package = "tf2_ros", 
+                       executable = "static_transform_publisher",
+                       arguments = ["-0.85", "0", "0", "0", "0", "0", "base_link", "imu_link"]),      
+         
         # launch_ros.actions.Node(
         #     package='plotter',
         #     executable='plotter_node',
