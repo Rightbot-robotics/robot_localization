@@ -1,15 +1,15 @@
 ### ekf config file ###
 ekf_filter_node:
     ros__parameters:
-        frequency: 50.0
+        frequency: 20.0
         sensor_timeout: 0.1
         two_d_mode: true
         transform_time_offset: 0.0
         transform_timeout: 0.0
         print_diagnostics: true
-        debug: false
+        debug: true
         permit_corrected_publication: true
-        publish_acceleration: false
+        publish_acceleration: true
         publish_tf: true
 
 
@@ -34,21 +34,24 @@ ekf_filter_node:
         odom0_twist_rejection_threshold: 1.0
 
         # IMU0: VECTORNAV IMU
-        imu0: /imu/data
-        imu0_config:  [false, false, false,
-                       false, false, true,
-                       false, false, false,
-                       false, false, false,
-                       false, false, false]
-        imu0_queue_size: 2
+        imu0: /imu/data_hr
+        # imu0: /imu
+        imu0_config: [false, false, false,
+                    false,  false,  false,
+                    false, false, false,
+                    false,  false,  true,
+                    false,  false,  false]
         imu0_nodelay: false
         imu0_differential: false
         imu0_relative: true
-        imu0_twist_rejection_threshold: 0.8
-        imu0_linear_acceleration_rejection_threshold: 0.3 
+        imu0_queue_size: 5
         imu0_remove_gravitational_acceleration: false
 
+
         use_control: false
+        stamped_control: false
+        control_timeout: 0.1
+        control_config: [true, false, false, false, false, true]
 
         smooth_lagged_data: true
         history_length: 0.1
